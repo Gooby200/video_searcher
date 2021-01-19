@@ -1,0 +1,14 @@
+<div class="card fileCard" style="display: inline-block;">
+    <div class="card-header">
+      {{ titleCase(file.type) }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><a href="#">{{ file.name }}</a></h5>
+      <p class="card-text">{{ file.description }}</p>
+        <center>
+          <div style="display: inline-block;" ng-repeat="tag in file.tags">
+              <tag data="tag" eraseable="false"></tag>
+          </div>
+        </center>
+    </div>
+</div>

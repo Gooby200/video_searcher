@@ -1,0 +1,21 @@
+body {
+    background-color: hsla(206, 18%, 82%, 1);
+}
+
+.section {
+    background-color: hsla(138, 0%, 90%, 1);
+    border-radius: 5px;
+    border: 1px solid hsla(138, 0%, 80%, 1);
+    margin-top: 10px;
+}
+
+.infoText {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid hsla(138, 0%, 80%, 1);
+    position: absolute;
+    z-index: 9;
+    padding: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+}

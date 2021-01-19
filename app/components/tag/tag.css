@@ -1,0 +1,17 @@
+.tag {
+    border-radius: 5px;
+    min-width: 100px;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+    display: inline-block;
+}
+
+.icon {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: hsla(223, 50%, 79%, 1)
+}

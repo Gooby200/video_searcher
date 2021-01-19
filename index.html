@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Video/File Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body ng-controller="appController">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/973f53d9b1.js" crossorigin="anonymous"></script>
+
+    <div class="container" >
+      <div class="row">
+        <div class="col" style="margin-top: 10px;">
+          <p>
+            <span ng-mouseenter="showInfo=true" ng-mouseleave="showInfo=false"><strong>Explanation <i class="fas fa-info-circle"></i></strong> (hover me)</span>
+          </p>
+          <p class="infoText" ng-show="showInfo">
+            This little demo was written in AngularJS. It is supposed to simulate a file (image/video) uploader which a user can select a 
+            file from their computer and upload it to the "add content" page. I wanted to create an "add content" page which was supposed to
+            allow the user to upload a file, give it a description, add tags to the associated file, ability to remove tags by passing in "eraseable=true" to the tag component, and select "Add". Selecting add would
+            have shown the file in the main page with the tags that the user added. Due to time constraints (was only able to work on this for 3 hours during
+            the weekend), I only demonstrated that I can utilize the routing capabilities given by AngularJS.<br>
+            <br>
+            On the main page, a user can search for files based on these tags. These tags are not eraseable as I'm passing "eraseable=false" through the search view. If a user uploaded a file with tags such as "arm", "surgery",
+            "removal", another user would be able to search for any, some or all of those 3 tags and find this video.<br>
+            <br>
+            If I had more time, I would have hooked this up to a MySQL database with several tables such as Files (ID, Name, Description, Type, ServerPath)
+            and Tags (ID, FileID, Name). I would have also implemented pagination. In terms of the searching, I would have implemented a timer of 1 second
+            for every keypress event. Whenever a keypress happens, it would reset the timer back to 1 second. This would prevent us spamming the database with
+            a bunch of calls every time that a user presses a key.<br>
+            <br>     
+            The reason for this demo was so that I could show that I can quickly pick up languages and frameworks. The file structure of this 
+            code isn't the best... I started refactoring the code and restructuring files towards the end, but my intent was to demonstrate that I can read a tutorial and look at code very quickly and create something.
+            If I was writing in an existing codebase and/or given more time, I would have structured my files better and I would have researched
+            how to split modules/controllers/components better as well. My code at the moment is all over the place.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div ng-view></div>
+
+    <script src="js/app.js"></script>
+    <script src="app/components/file/file.module.js"></script>
+    <script src="app/components/tag/tag.module.js"></script>
+    <script src="app/search-content/search.controller.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app/components/file/file.css">
+    <link rel="stylesheet" href="app/components/tag/tag.css">
+  </body>
+</html>
